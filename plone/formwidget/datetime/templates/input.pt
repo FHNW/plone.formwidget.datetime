@@ -1,4 +1,5 @@
-<tal:root define="whole_day context/whole_day|context/wholeDay|nothing;
+<tal:root define="whole_day_fld context/whole_day|context/wholeDay|nothing;
+                  whole_day python:whole_day_fld and (view.id.endswith('-start') or view.id.endswith('-end')) or False;
                   required view/required">
 
 <!-- day -->
@@ -76,11 +77,10 @@
    tal:replace="structure view/show_today_link_js" />
 
 &nbsp;
-
-<span class="datetimewidget-time"
+  <span class="datetimewidget-time-fhnw"
     tal:condition="view/show_time"
     tal:attributes="id string:${view/id}-timecomponents;
-                    style python:whole_day and 'display:none' or ''">
+    style python:whole_day and 'display:none' or ''">
 
   <!-- hour -->
   <select class="hour"
