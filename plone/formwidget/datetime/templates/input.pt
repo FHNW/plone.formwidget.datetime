@@ -1,5 +1,6 @@
-<tal:root define="whole_day_fld context/whole_day|context/wholeDay|nothing;
-                  whole_day python:whole_day_fld and (view.id.endswith('-start') or view.id.endswith('-end')) or False;
+<tal:root define="wday_value context/whole_day|context/wholeDay|nothing;
+                  wday_can_hide python:(view.id.endswith('-start') or view.id.endswith('-end'));
+                  whole_day python:wday_can_hide and wday_value or False;
                   required view/required">
 
 <!-- day -->
@@ -80,7 +81,8 @@
   <span class="datetimewidget-time-fhnw"
     tal:condition="view/show_time"
     tal:attributes="id string:${view/id}-timecomponents;
-    style python:whole_day and 'display:none' or ''">
+                    style python:whole_day and 'display:none' or '';
+                    class python:wday_can_hide and 'datetimewidget-time' or 'datetimewidget-time-fhnw'">
 
   <!-- hour -->
   <select class="hour"
