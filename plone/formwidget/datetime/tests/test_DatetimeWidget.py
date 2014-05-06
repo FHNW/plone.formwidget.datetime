@@ -43,6 +43,18 @@ class TestDatetimeWidget(unittest.TestCase):
             ('2011', '11', '21', '5', '30')
         )
 
+    def test_extract_notime(self):
+        instance = self.createInstance()
+        instance.request = {
+            'field-day': '21',
+            'field-month': '11',
+            'field-year': '2014',
+        }
+        self.assertEqual(
+            instance.extract(),
+            ('2014', '11', '21')
+        )
+
     def test_extract__default_in_(self):
         instance = self.createInstance()
         instance.request = {
