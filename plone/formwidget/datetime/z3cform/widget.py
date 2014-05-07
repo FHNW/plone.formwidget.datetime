@@ -102,6 +102,11 @@ class DatetimeWidget(base.AbstractDatetimeWidget, AbstractDXDateWidget):
                 # can be naive datetime
                 dt += (timezone,)
             return dt
+        elif default not in (year, month, day):
+            dt = (year, month, day, '0','0')
+            if timezone and timezone != default:
+                dt += (timezone,)
+            return dt
 
         # get a hidden value
         formatter = self._dtformatter

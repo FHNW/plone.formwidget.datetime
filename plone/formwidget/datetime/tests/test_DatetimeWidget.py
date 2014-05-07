@@ -52,7 +52,7 @@ class TestDatetimeWidget(unittest.TestCase):
         }
         self.assertEqual(
             instance.extract(),
-            ('2014', '11', '21')
+            ('2014', '11', '21','0','0')
         )
 
     def test_extract__default_in_(self):
