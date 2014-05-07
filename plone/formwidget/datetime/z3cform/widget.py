@@ -76,10 +76,11 @@ class DatetimeWidget(base.AbstractDatetimeWidget, AbstractDXDateWidget):
         day = self.request.get(self.name + '-day', default)
         month = self.request.get(self.name + '-month', default)
         year = self.request.get(self.name + '-year', default)
-        hour = self.request.get(self.name + '-hour', default)
+        hour = self.request.get(self.name + '-hour', default) 
+        hour = hour and hour or  default
         minute = self.request.get(self.name + '-minute', default)
+        minute = minute and minute or default
         timezone = self.request.get(self.name + '-timezone', default)
-
         if (self.ampm is True
             and hour is not default
             and minute is not default
