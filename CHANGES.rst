@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0-FHNW1 (unreleased)
+1.0-FHNW1 (2014-06-12)
 ----------------------
 
 - Fixed: date was not been saved if time was not set [rristow]
