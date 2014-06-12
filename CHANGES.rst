@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0-FHNW1 (unreleased)
+----------------------
+
+- Fixed: date was not been saved if time was not set [rristow]
+- Fixed time field class (it was hidden by javascript) [rristow]
+
 1.0 (2013-11-06)
 ----------------
 
