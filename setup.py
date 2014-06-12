@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='plone.formwidget.datetime',
-    version='1.0-FHNW1',
+    version='1.0.1.dev0',
     description="Datetime widgets for Plone",
     long_description=open("README.rst").read() + "\n" +
         open("CHANGES.rst").read(),
